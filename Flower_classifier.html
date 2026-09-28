@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flower Classifier</title>
+</head>
+<body>
+<h2> Flower Classifier</h2>
+
+<label>Petal Length (cm):</label>
+<input type="number" id="length"><br><br>
+
+<label>Petal Width (cm):</label>
+<input type="number" id="width"><br><br>
+
+<button onclick="classifyFlower()">Classify Flower</button>
+
+<h3 id="result"></h3>
+
+<script>
+function classifyFlower() {
+    let length = parseFloat(document.getElementById("length").value);
+    let width = parseFloat(document.getElementById("width").value);
+
+    let flower;
+
+    if (length < 2 && width < 1) {
+        flower = "🌼 Daisy";
+    }
+    else if (length < 3 && width < 1.5) {
+        flower = "🌸 Lily";
+    }
+    else if (length < 4 && width < 2) {
+        flower = "🌷 Tulip";
+    }
+    else if (length < 5 && width < 2.5) { 
+        flower = "🌹 Rose"; 
+    } 
+    else if (length < 6 && width < 3) { 
+        flower = "🌻 Sunflower"; 
+    } 
+    else if (length < 7 && width < 3.5) { 
+        flower = "🌺 Orchid"; 
+    } else {
+        flower = "🌼 Marigold"; 
+    } 
+    document.getElementById("result").innerHTML = "Predicted Flower: " + flower; 
+} 
+</script> 
+</body> 
+</html>
